@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VelDec – Mensagem Enviada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+  .thankyou-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 30px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-primary);
+  }
+
+  .thankyou-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: var(--bg-secondary);
+    border-radius: 50%;
+    opacity: 0.18;
+    filter: blur(120px);
+    pointer-events: none;
+  }
+
+  .thankyou-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 580px;
+  }
+
+  .thankyou-icon {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(163,209,204,0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 40px;
+    animation: fadeUp 0.8s 0.1s both;
+  }
+
+  .thankyou-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--accent-teal);
+  }
+
+  .thankyou-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    display: block;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.2s both;
+  }
+
+  .thankyou-title {
+    font-family: var(--font-serif);
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text-light);
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.35s both;
+  }
+
+  .thankyou-title em {
+    font-style: italic;
+    color: var(--accent-teal);
+  }
+
+  .thankyou-sub {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: rgba(241,237,243,0.45);
+    margin-bottom: 56px;
+    animation: fadeUp 0.8s 0.5s both;
+  }
+
+  .thankyou-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(163,209,204,0.3);
+    margin: 0 auto 48px;
+    animation: fadeUp 0.8s 0.55s both;
+  }
+
+  .btn-back {
+    background: var(--accent-teal);
+    color: var(--bg-primary);
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 18px 48px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.3s;
+    animation: fadeUp 0.8s 0.65s both;
+  }
+
+  .btn-back:hover { opacity: 0.82; }
+
+  /* LOGO top left */
+  .page-logo {
+    position: fixed;
+    top: 28px;
+    left: 60px;
+    z-index: 100;
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: var(--text-light);
+    text-decoration: none;
+  }
+
+  .page-logo span { color: var(--accent-teal); }
+
+  @media (max-width: 600px) {
+    .page-logo { left: 30px; top: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGO -->
+<a href="index.html" class="page-logo">Vel<span>Dec</span></a>
+
+<!-- THANK YOU PAGE -->
+<div class="thankyou-page">
+  <div class="thankyou-bg"></div>
+
+  <div class="thankyou-content">
+
+    <div class="thankyou-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <span class="thankyou-eyebrow" data-i18n="ty.eyebrow">Proposta recebida</span>
+
+    <h1 class="thankyou-title" data-i18n-html="ty.title">Obrigada.<br><em>Entraremos em contato</em><br>em breve.</h1>
+
+    <div class="thankyou-divider"></div>
+
+    <p class="thankyou-sub" data-i18n="ty.sub">Sua mensagem chegou até nós. Analisaremos seu projeto com atenção e retornaremos o mais breve possível para darmos início à sua transformação digital.</p>
+
+    <a href="index.html" class="btn-back" data-i18n="ty.btn">Voltar ao site</a>
+
+  </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<button id="scrollTopBtn" class="scroll-top-float" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5"></path>
+    <path d="M6 11l6-6 6 6"></path>
+  </svg>
+</button>
+<a href="https://wa.me/+5531973433033?text=Ol%C3%A1%2C%20VelDec!" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#0A020E">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const toggleScrollTop = () => {
+      const showAfter = 200;
+      if (window.scrollY > showAfter) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    };
+
+    toggleScrollTop();
+    window.addEventListener('scroll', toggleScrollTop, { passive: true });
+  }
+</script>
+</body>
+</html>
